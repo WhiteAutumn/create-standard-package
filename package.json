@@ -1,0 +1,41 @@
+{
+  "name": "@autumn.dev/create-standard-package",
+  "version": "0.0.0",
+  "description": "My personal template for authoring npm packages",
+  "author": "WhiteAutumn",
+  "license": "MIT",
+  "volta": {
+    "node": "20.11.1",
+    "npm": "10.5.0"
+  },
+  "homepage": "https://github.com/WhiteAutumn/create-standard-package",
+  "bugs": {
+    "url": "https://github.com/WhiteAutumn/create-standard-package/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WhiteAutumn/create-standard-package.git"
+  },
+  "files": [
+    "dist",
+    "template",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prestart": "run-s build",
+    "start": "node dist/main.mjs",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "supports-color": "^9.4.0",
+    "validate-npm-package-name": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/validate-npm-package-name": "^4.0.0",
+    "npm-run-all": "^4.0.0",
+    "typescript": "~5.4.0"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    // Target
+    "target": "ES2020",
+    "lib": ["ES2020"],
+    "module": "NODENEXT",
+    "outDir": "dist",
+
+    // Behavior
+    "allowSyntheticDefaultImports": true,
+
+    // Safety
+    "strict": true,
+  },
+  "include": ["src/**/*.ts", "src/**/*.mts"],
+  "exclude": ["src/**/*.test.*", "node_modules", "dist"]
+}

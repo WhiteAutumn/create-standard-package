@@ -1,0 +1,9 @@
+# Project
+node_modules/
+dist/
+
+# Editors
+.idea/
+
+# OS
+.DS_Store
