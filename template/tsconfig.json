@@ -9,6 +9,9 @@
     // Safety
     "strict": true,
 
+    // Behavior
+    "esModuleInterop": true,
+
     // Output
     "sourceMap": true,
     "declaration": true,
