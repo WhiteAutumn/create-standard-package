@@ -1,6 +1,8 @@
-import { readline } from "./constants.mjs";
-import { createPackageFromTemplate } from "./creator.mjs";
-import { askForPackageName, askQuestion, askYesOrNo } from "./questions.mjs";
+#!/usr/bin/env node
+
+import { readline } from "./constants.js";
+import { createPackageFromTemplate } from "./creator.js";
+import { askForPackageName, askQuestion, askYesOrNo } from "./questions.js";
 
 const packageName = await askForPackageName();
 const packageDescription = await askQuestion("Package description");

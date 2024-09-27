@@ -5,7 +5,7 @@ import fs from "node:fs/promises";
 import child_process from "node:child_process";
 import util from "node:util";
 
-import { fileLocation } from "./util.mjs";
+import { fileLocation } from "./util.js";
 
 const exec = util.promisify(child_process.exec);
 

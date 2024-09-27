@@ -1,7 +1,7 @@
 import validatePackageName from 'validate-npm-package-name';
 import chalk from 'chalk';
 
-import { readline, useColors } from './constants.mjs';
+import { readline, useColors } from './constants.js';
 
 export const askQuestion = async (question: string, fallback?: string) => {
 	const answer = await readline.question(`${question}${fallback != null ? ` (${fallback})` : ""}: `);
