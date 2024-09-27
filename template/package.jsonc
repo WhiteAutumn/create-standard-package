@@ -45,8 +45,8 @@
     "test:watch": "mocha --watch --reporter min --colors .",
     "type-check": "tsc --noEmit",
     "build": "run-p build:*",
-    "build:require": "tsc --project tsconfig.cjs.json",
-    "build:modules": "tsc --project tsconfig.esm.json",
+    "build:commonjs": "tsc --project tsconfig.cjs.json",
+    "build:esm": "tsc --project tsconfig.esm.json",
     "postbuild": "node ./scripts/postbuild.mjs",
     "prepack": "npm run build"
   },
