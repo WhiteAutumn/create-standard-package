@@ -10,6 +10,8 @@
     "strict": true,
 
     // Output
-    "declaration": true
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true
   }
 }
