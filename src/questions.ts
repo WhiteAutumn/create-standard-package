@@ -4,28 +4,28 @@ import chalk from 'chalk';
 import { readline, useColors } from './constants.js';
 
 export const askQuestion = async (question: string, fallback?: string) => {
-	const answer = await readline.question(`${question}${fallback != null ? ` (${fallback})` : ""}: `);
-	if (answer === "" && fallback != null) {
+	const answer = await readline.question(`${question}${fallback != null ? ` (${fallback})` : ''}: `);
+	if (answer === '' && fallback != null) {
 		return fallback;
 	}
-	else {
-		return answer;
-	}
+	
+	return answer;
+	
 };
 
-export const askYesOrNo = async (question: string, fallback: "yes" | "no") => {
+export const askYesOrNo = async (question: string, fallback: 'yes' | 'no') => {
 	while (true) {
-		const answer = await readline.question(`${question} (${fallback === "yes" ? "Y" : "y"}/${fallback === "no" ? "N" : "n"}): `)
+		const answer = await readline.question(`${question} (${fallback === 'yes' ? 'Y' : 'y'}/${fallback === 'no' ? 'N' : 'n'}): `)
 			.then(it => it.toLowerCase());
 
-		if (answer === "y" || answer === "yes") {
+		if (answer === 'y' || answer === 'yes') {
 			return true;
 		}
-		else if (answer === "n" || answer === "no") {
+		else if (answer === 'n' || answer === 'no') {
 			return false;
 		}
-		else if (answer === "") {
-			return fallback === "yes";
+		else if (answer === '') {
+			return fallback === 'yes';
 		}
 	}
 };
@@ -33,7 +33,7 @@ export const askYesOrNo = async (question: string, fallback: "yes" | "no") => {
 export const askForPackageName = async () => {
 	let packageName: string;
 	while (true) {
-		packageName = await askQuestion("Package name");
+		packageName = await askQuestion('Package name');
 		const validationResult = validatePackageName(packageName);
 
 		for (const error of validationResult.errors ?? []) {
@@ -43,7 +43,8 @@ export const askForPackageName = async () => {
 
 		if (validationResult.validForNewPackages) {
 			break;
-		} else {
+		}
+		else {
 			console.log();
 		}
 	}

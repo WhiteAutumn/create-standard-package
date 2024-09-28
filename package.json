@@ -27,6 +27,7 @@
   },
   "scripts": {
     "build": "tsc",
+    "lint": "eslint .",
     "prestart": "run-s build",
     "start": "node dist/main.mjs",
     "prepack": "npm run build"
@@ -37,8 +38,10 @@
     "validate-npm-package-name": "^5.0.0"
   },
   "devDependencies": {
+    "@autumn.dev/eslint-config": "0.0.1",
     "@types/node": "^20.0.0",
     "@types/validate-npm-package-name": "^4.0.0",
+    "eslint": "^8.0.0",
     "npm-run-all": "^4.0.0",
     "typescript": "~5.6.0"
   }
