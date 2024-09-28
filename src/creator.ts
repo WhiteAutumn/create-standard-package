@@ -5,6 +5,8 @@ import fs from 'node:fs/promises';
 import child_process from 'node:child_process';
 import util from 'node:util';
 
+import semver from 'semver';
+
 import { fileLocation } from './util.js';
 
 const exec = util.promisify(child_process.exec);
@@ -13,9 +15,26 @@ const { __dirname } = fileLocation(import.meta);
 const templateDir = path.join(__dirname, '..', 'template');
 const templateFilesPromise = fs.readdir(templateDir, { withFileTypes: true });
 
+const fetchNodeLTS = async () => {
+	type NodeIndex = Array<{
+		version: string;
+		lts:     boolean;
+	}>;
+
+	const releases = <NodeIndex> await fetch('https://nodejs.org/dist/index.json')
+		.then(it => it.json());
+
+	const ltsVersions = releases.filter(release => release.lts);
+	const sortedVersions = ltsVersions.sort((a, b) => semver.rcompare(a.version, b.version));
+	const latestVersion = sortedVersions[0].version;
+	return latestVersion;
+};
+
 const voltaExistsPromise = exec('volta --version')
 	.then(() => true)
 	.catch(() => false);
+
+const nodeLTSPromise = fetchNodeLTS();
 
 type Files = {
 	[K: string]: string | Files;
@@ -33,18 +52,23 @@ type UserTemplateVariables = {
 };
 
 type TemplateVariables = UserTemplateVariables & {
-	USE_VOLTA:    boolean;
 	CURRENT_YEAR: string;
+	USE_VOLTA:    boolean;
+	NODE_LTS:     string;
 };
 
 export const createPackageFromTemplate = async (location: string, userVariables: UserTemplateVariables) => {
 	const resolvedLocation = path.resolve(location);
 
+	const nodeLTS = await nodeLTSPromise;
+	const nodeMajorVersionLTS = semver.major(nodeLTS);
+
 	const variables: TemplateVariables = {
 		...userVariables,
 
+		CURRENT_YEAR: String(new Date().getFullYear()),
 		USE_VOLTA:    await voltaExistsPromise,
-		CURRENT_YEAR: String(new Date().getFullYear())
+		NODE_LTS:     String(nodeMajorVersionLTS)
 	};
 
 	const locationDirCreationPromise = fs.mkdir(resolvedLocation, { recursive: true });
@@ -58,7 +82,7 @@ export const createPackageFromTemplate = async (location: string, userVariables:
 	await writeDirectory(resolvedLocation, processedDirectory);
 
 	if (await voltaExistsPromise) {
-		await exec('volta pin node@lts', {
+		await exec(`volta pin node@${nodeMajorVersionLTS}`, {
 			cwd: resolvedLocation
 		});
 	}
