@@ -40,6 +40,6 @@
     "@types/node": "^20.0.0",
     "@types/validate-npm-package-name": "^4.0.0",
     "npm-run-all": "^4.0.0",
-    "typescript": "~5.4.0"
+    "typescript": "~5.6.0"
   }
 }
