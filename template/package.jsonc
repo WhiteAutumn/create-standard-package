@@ -40,7 +40,7 @@
   "scripts": {
     "lint": "eslint . --color",
     "lint:fix": "eslint . --fix --color",
-    "lint:strict": "eslint . --color --max-warnings=0",
+    "lint:strict": "cross-env STRICT=true eslint . --color --max-warnings=0",
     "test": "mocha --colors .",
     "test:watch": "mocha --watch --reporter min --colors .",
     "type-check": "tsc --noEmit",
@@ -57,6 +57,7 @@
     "@types/mocha": "^10.0.0",
     "@types/node": "^%NODE_LTS%.0.0",
     "chai": "^4.0.0",
+    "cross-env": "^7.0.0",
     "esbuild-runner": "^2.0.0",
     "eslint": "^8.0.0",
     "mocha": "^10.0.0",
