@@ -38,7 +38,7 @@
     "validate-npm-package-name": "^5.0.0"
   },
   "devDependencies": {
-    "@autumn.dev/eslint-config": "0.0.1",
+    "@autumn.dev/eslint-config": "^0.0.3",
     "@types/node": "^20.0.0",
     "@types/validate-npm-package-name": "^4.0.0",
     "eslint": "^8.0.0",
