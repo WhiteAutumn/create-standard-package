@@ -29,7 +29,7 @@
     "build": "tsc",
     "lint": "eslint .",
     "prestart": "run-s build",
-    "start": "node dist/main.mjs",
+    "start": "node dist/main.js",
     "prepack": "npm run build"
   },
   "dependencies": {
