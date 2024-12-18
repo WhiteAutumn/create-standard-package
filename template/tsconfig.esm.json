@@ -4,6 +4,6 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "module": "ESNext",
-    "outDir": "dist/mjs"
+    "outDir": "dist/esm"
   }
 }

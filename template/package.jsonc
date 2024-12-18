@@ -24,12 +24,12 @@
     "LICENSE"
   ],
   "main": "./dist/cjs/lib.cjs.js",
-  "module": "./dist/mjs/lib.esm.js",
+  "module": "./dist/esm/lib.esm.js",
   "exports": {
     ".": {
       "import": {
-        "types": "./dist/mjs/lib.esm.d.ts",
-        "default": "./dist/mjs/lib.esm.js"
+        "types": "./dist/esm/lib.esm.d.ts",
+        "default": "./dist/esm/lib.esm.js"
       },
       "require": {
         "types": "./dist/cjs/lib.cjs.d.ts",
