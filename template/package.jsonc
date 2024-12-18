@@ -23,17 +23,17 @@
     "dist",
     "LICENSE"
   ],
-  "main": "./dist/cjs/index.cjs.js",
-  "module": "./dist/mjs/index.esm.js",
+  "main": "./dist/cjs/lib.cjs.js",
+  "module": "./dist/mjs/lib.esm.js",
   "exports": {
     ".": {
       "import": {
-        "types": "./dist/mjs/index.esm.d.ts",
-        "default": "./dist/mjs/index.esm.js"
+        "types": "./dist/mjs/lib.esm.d.ts",
+        "default": "./dist/mjs/lib.esm.js"
       },
       "require": {
-        "types": "./dist/cjs/index.cjs.d.ts",
-        "default": "./dist/cjs/index.cjs.js"
+        "types": "./dist/cjs/lib.cjs.d.ts",
+        "default": "./dist/cjs/lib.cjs.js"
       }
     }
   },
