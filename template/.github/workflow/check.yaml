@@ -42,6 +42,7 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           report-json: "eslint-report.json"
+          fail-on-warning: true
 
   typecheck:
     runs-on: ubuntu-latest
