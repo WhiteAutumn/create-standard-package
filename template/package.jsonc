@@ -57,7 +57,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@autumn.dev/eslint-config": "0.0.3",
+    "@autumn.dev/eslint-config": "0.0.4",
     "@types/chai": "^4.0.0",
     "@types/mocha": "^10.0.0",
     "@types/node": "^%NODE_LTS%.0.0",
