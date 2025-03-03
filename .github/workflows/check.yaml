@@ -1,11 +1,11 @@
-name: Lint
+name: Check
 
 on:
   pull_request:
   push:
 
 jobs:
-  eslint:
+  lint:
     runs-on: ubuntu-latest
 
     permissions:
@@ -29,3 +29,16 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           report-json: "eslint-report.json"
+
+  typecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm ci
+
+      - run: npm run typecheck
