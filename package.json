@@ -28,6 +28,7 @@
   "scripts": {
     "build": "tsc",
     "lint": "eslint .",
+    "lint:report": "npm run lint -- --output-file eslint-report.json --format json",
     "prestart": "run-s build",
     "start": "node dist/main.js",
     "prepack": "npm run build"

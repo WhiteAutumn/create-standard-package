@@ -1,6 +1,8 @@
 # Project
 node_modules/
 dist/
+eslint-report.json
+
 
 # Editors
 .idea/
