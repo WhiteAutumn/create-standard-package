@@ -21,6 +21,7 @@
 // #ENDIF
   "files": [
     "dist",
+    "src",
     "LICENSE"
   ],
   "main": "./dist/cjs/lib.cjs.js",
