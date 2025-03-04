@@ -46,7 +46,6 @@
     "typecheck": "tsc --noEmit",
     "test": "mocha --colors .",
     "test:watch": "mocha --watch --reporter min --colors .",
-    "type-check": "tsc --noEmit",
     "build": "run-p build:*",
     "build:commonjs": "tsc --project tsconfig.cjs.json",
     "build:esm": "tsc --project tsconfig.esm.json",
