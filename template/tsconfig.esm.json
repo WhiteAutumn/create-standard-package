@@ -3,7 +3,7 @@
   "exclude": ["src/**/*.cjs.ts"],
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "module": "ESNext",
+    "module": "NodeNext",
     "outDir": "dist/esm"
   }
 }
