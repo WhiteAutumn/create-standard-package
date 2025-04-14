@@ -63,11 +63,11 @@
     "@types/node": "^%NODE_LTS%.0.0",
     "chai": "^4.0.0",
     "cross-env": "^7.0.0",
-    "esbuild-runner": "^2.0.0",
     "eslint": "^8.0.0",
     "mocha": "^10.0.0",
     "npm-run-all": "^4.0.0",
     "simple-git-hooks": "^2.0.0",
+    "tsx": "^4.0.0",
     "typescript": "~5.7.0",
     "undici-types": "~7.1.0"
   }

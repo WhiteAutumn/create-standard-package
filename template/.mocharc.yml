@@ -1,3 +1,5 @@
-spec: "src/**/*.test.ts"
-require: ["esbuild-runner/register"]
-watch-files: ["src/**/*.ts"]
+spec: src/**/*.test.ts
+watch-files:
+  - src/**/*.ts
+node-option:
+  - import=tsx
