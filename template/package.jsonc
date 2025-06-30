@@ -4,6 +4,7 @@
   "description": "%PACKAGE_DESCRIPTION%",
   "author": "%PACKAGE_AUTHOR%",
   "license": "MIT",
+  "type": "module",
 // #IF USE_VOLTA
   "volta": {
     "node": "0.0.0"
@@ -24,17 +25,17 @@
     "src",
     "LICENSE"
   ],
-  "main": "./dist/cjs/lib.cjs.js",
-  "module": "./dist/esm/lib.esm.js",
+  "main": "./dist/cjs/lib.cjs",
+  "module": "./dist/esm/lib.mjs",
   "exports": {
     ".": {
       "import": {
-        "types": "./dist/esm/lib.esm.d.ts",
-        "default": "./dist/esm/lib.esm.js"
+        "types": "./dist/esm/lib.d.mts",
+        "default": "./dist/esm/lib.mjs"
       },
       "require": {
-        "types": "./dist/cjs/lib.cjs.d.ts",
-        "default": "./dist/cjs/lib.cjs.js"
+        "types": "./dist/cjs/lib.d.cts",
+        "default": "./dist/cjs/lib.cjs"
       }
     }
   },

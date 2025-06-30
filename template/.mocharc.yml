@@ -1,5 +1,10 @@
-spec: src/**/*.test.ts
+spec:
+  - src/**/*.test.ts
+  - src/**/*.test.mts
+  - src/**/*.test.cts
 watch-files:
   - src/**/*.ts
+  - src/**/*.mts
+  - src/**/*.cts
 node-option:
   - import=tsx

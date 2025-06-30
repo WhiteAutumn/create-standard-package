@@ -1,9 +1,8 @@
 {
-  "include": ["src/**/*.ts"],
-  "exclude": ["src/**/*.cjs.ts"],
+  "include": ["src/**/*.ts", "src/**/*.mts"],
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "module": "NodeNext",
+    "module": "nodenext",
     "outDir": "dist/esm"
   }
 }
