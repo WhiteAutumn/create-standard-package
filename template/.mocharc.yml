@@ -1,7 +1,5 @@
 spec:
-  - src/**/*.test.ts
-  - src/**/*.test.mts
-  - src/**/*.test.cts
+  - src/**/*.test.{ts,mts,cts}
 watch-files:
   - src/**/*.ts
   - src/**/*.mts
